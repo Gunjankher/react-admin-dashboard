@@ -29,6 +29,28 @@ function AdminSideBar() {
             path: "/admin/transaction",
         },
     ];
+    const chartItems = [
+        {
+            icon: <RiDashboardFill />,
+            name: "Dashboard",
+            path: "/admin/dashboard",
+        },
+        {
+            icon: <RiShoppingBag3Fill />,
+            name: "Products",
+            path: "/admin/products",
+        },
+        {
+            icon: <AiFillFileText />,
+            name: "Customer",
+            path: "/admin/customer",
+        },
+        {
+            icon: <IoIosPeople />,
+            name: "Transaction",
+            path: "/admin/transaction",
+        },
+    ];
 
 
 
@@ -55,9 +77,32 @@ function AdminSideBar() {
                     ))}
                 </ul>
 
+
+                <h5>Chart</h5>
+                <ul>
+                    {chartItems.map((item, index) => (
+                        <li
+                            key={index}
+                        style={{
+                            backgroundColor : location.pathname.includes(item.path)
+                            ? "rgba(0,115,255,0.1)"
+                            : "white"
+                        }}
+                        >
+                            <Link to={item.path}>
+                                {item.icon}
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                
+
                  
             </div>
         </aside>
+
+        
     );
 }
 
