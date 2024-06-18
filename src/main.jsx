@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { lazy } from 'react'
+import "./styles/app.scss"
 import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from 'react-router-dom'
 
 const DashBoard = lazy(()=> import('./pages/DashBoard'))

@@ -1,9 +1,14 @@
 import React from 'react'
+import AdminSideBar from '../components/AdminSideBar'
 
 function DashBoard() {
   return (
-    <div>DashBoard</div>
+    <div className='adminContainer'>
+<AdminSideBar/>
+<main>esgdg</main>
+
+    </div>
   )
 }
 
-export default DashBoard
+export default DashBoard 
