@@ -1,8 +1,14 @@
 import React from 'react'
+import AdminSideBar from '../components/AdminSideBar'
+
 
 function Products() {
   return (
-    <div>Products</div>
+    <div className='adminContainer'>
+    <AdminSideBar/>
+    <main>esgdg</main>
+    
+        </div>
   )
 }
 

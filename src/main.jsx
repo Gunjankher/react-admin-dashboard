@@ -38,7 +38,7 @@ const router = createBrowserRouter(
           <DashBoard />
         </Suspense>
       } />
-      <Route path='/admin/transcation' element={
+      <Route path='/admin/transaction' element={
         <Suspense fallback={<Loader />}>
           <Transcation />
         </Suspense>
@@ -48,7 +48,7 @@ const router = createBrowserRouter(
           <Products />
         </Suspense>
       } />
-      <Route path='/admin/customers' element={
+      <Route path='/admin/customer' element={
         <Suspense fallback={<Loader />}>
           <Customers />
         </Suspense>

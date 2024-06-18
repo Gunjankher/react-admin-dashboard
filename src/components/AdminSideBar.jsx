@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { RiDashboardFill } from 'react-icons/ri';
+import { RiDashboardFill,RiShoppingBag3Fill,} from 'react-icons/ri';
+import {AiFillFileText} from 'react-icons/ai'
+import {IoIosPeople} from 'react-icons/io'
 
 function AdminSideBar() {
     const location = useLocation();
@@ -12,21 +14,23 @@ function AdminSideBar() {
             path: "/admin/dashboard",
         },
         {
-            icon: <RiDashboardFill />,
+            icon: <RiShoppingBag3Fill />,
             name: "Products",
             path: "/admin/products",
         },
         {
-            icon: <RiDashboardFill />,
+            icon: <AiFillFileText />,
             name: "Customer",
-            path: "/admin/customers",
+            path: "/admin/customer",
         },
         {
-            icon: <RiDashboardFill />,
+            icon: <IoIosPeople />,
             name: "Transaction",
             path: "/admin/transaction",
         },
     ];
+
+
 
     return (
         <aside>
@@ -37,7 +41,11 @@ function AdminSideBar() {
                     {dashItems.map((item, index) => (
                         <li
                             key={index}
-                            className={location.pathname === item.path ? 'active' : ''}
+                        style={{
+                            backgroundColor : location.pathname.includes(item.path)
+                            ? "rgba(0,115,255,0.1)"
+                            : "white"
+                        }}
                         >
                             <Link to={item.path}>
                                 {item.icon}
@@ -46,6 +54,8 @@ function AdminSideBar() {
                         </li>
                     ))}
                 </ul>
+
+                 
             </div>
         </aside>
     );

@@ -1,8 +1,14 @@
 import React from 'react'
+import AdminSideBar from '../components/AdminSideBar'
+
 
 function Transcation() {
   return (
-    <div>Transcation</div>
+    <div className='adminContainer'>
+    <AdminSideBar/>
+    <main>esgdg</main>
+    
+        </div>
   )
 }
 
