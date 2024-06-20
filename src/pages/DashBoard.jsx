@@ -27,9 +27,40 @@ placeholder = "Search for data,users,docs"
 
 </div>
 
-<section>
+<section className='WidgetContainer'>
 
-<Widget />
+<Widget  
+ heading="Revenue"
+ value={1000000}
+ percent={30}
+ color="green"
+ amount={500}
+
+/>
+<Widget  
+ heading="Revenue"
+ value={1000}
+ percent={30}
+ color="green"
+ amount={500}
+
+/>
+<Widget  
+ heading="Revenue"
+ value={1000}
+ percent={30}
+ color="green"
+ amount={500}
+
+/>
+<Widget  
+ heading="Revenue"
+ value={100000}
+ percent={30}
+ color="green"
+ amount={500}
+
+/>
 
 
 </section>

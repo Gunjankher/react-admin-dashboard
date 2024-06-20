@@ -10,7 +10,7 @@
         @include flex(row,unset);
         padding : 0 1rem;
         border-bottom: 1px solid rgba(0,0,0,0.3);
-    }
+   
 
     img{
         width: 23px;
@@ -22,6 +22,17 @@
     svg{
         margin-right: 5px;
     }
+}
+
+.WidgetContainer{
+
+@include flex(row,space-between,stretch,2rem);
+padding : 2rem 2rem 2rem 0;
+
+}
+
+
+
 }
 
 
