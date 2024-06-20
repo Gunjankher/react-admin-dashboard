@@ -1,4 +1,5 @@
 import React from 'react'
+import {HiTrendingUp,HiTrendingDown} from 'react-icons/hi'
 
 export default function Widget(
     heading,
@@ -9,7 +10,20 @@ export default function Widget(
 
 ) {
   return (
-    <div>Widget</div>
+    <div>
+<p>{heading}</p>
+<h4>{amount ? `$${value}` : value}</h4>
+{percent>0? (
+<span className='green'>
+<HiTrendingUp/> + {percent}% {""}
+</span>
+
+):(<span className='red'>
+<HiTrendingDown /> {percent}$ {""}
+</span>)}
+
+
+    </div>
   )
 }
 
