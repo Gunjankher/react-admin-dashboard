@@ -33,37 +33,57 @@ placeholder = "Search for data,users,docs"
  heading="Revenue"
  value={1000000}
  percent={30}
- color="green"
+ color="blue"
  amount={500}
 
 />
 <Widget  
  heading="Revenue"
  value={1000}
- percent={30}
- color="green"
- amount={500}
+ percent={-30}
+ color="aquamarine"
+ amount={false}
 
 />
 <Widget  
  heading="Revenue"
  value={1000}
  percent={30}
- color="green"
- amount={500}
+ color="orange"
+//  amount={500}
 
 />
 <Widget  
  heading="Revenue"
- value={100000}
+ value={100000} 
  percent={30}
- color="green"
- amount={500}
+ color="purple"
+//  amount={500}
 
 />
 
 
 </section>
+
+<section className='graph-container'>
+<div className="revenue-chart">
+<h2>Revenue & Transaction</h2>
+
+
+</div>
+
+
+
+
+
+<div className="dashboard-categories">
+  <h2>Inventory</h2>
+</div>
+
+
+
+</section>
+
 
 </main>
 

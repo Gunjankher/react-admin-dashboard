@@ -5,6 +5,7 @@
     box-shadow: 0,0,10px rgba(0,0,0,0.132) ;
     padding: 2rem;
     @include flex(row,space-between,stretch,0);
+    border-radius: 10px;
     
 .widgetInfo{
  
