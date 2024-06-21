@@ -4,6 +4,7 @@ import React from 'react'
 import AdminSideBar from '../components/AdminSideBar'
 import Input from "../components/Input"
 import Widget from '../components/Widget'
+import CategoryItem from '../components/CategoryItem'
 
 import userImg from "../assets/profile.jpg"
 import {FaRegBell} from "react-icons/fa"
@@ -78,6 +79,9 @@ placeholder = "Search for data,users,docs"
 
 <div className="dashboard-categories">
   <h2>Inventory</h2>
+  <div>
+    <CategoryItem heading="laptops" value={70} color= "hsl(69,100%,50%)" />
+  </div>
 </div>
 
 
