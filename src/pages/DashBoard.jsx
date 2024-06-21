@@ -6,6 +6,7 @@ import Input from "../components/Input"
 import Widget from '../components/Widget'
 import CategoryItem from '../components/CategoryItem'
 import data from '../assets/data.json'
+import {BarChart} from '../components/Chart'
 
 import userImg from "../assets/profile.jpg"
 import {FaRegBell} from "react-icons/fa"
@@ -70,6 +71,16 @@ placeholder = "Search for data,users,docs"
 <section className='graph-container'>
 <div className="revenue-chart">
 <h2>Revenue & Transaction</h2>
+<BarChart
+data_1={[300,144,433,655,237,755,190 ]}
+data_2={[200,444,553,675,127,345,490 ]}
+title_1='revenue'
+title_2='Transaction'
+bgColor_1='rgb(0,115,255)'
+bgColor_2='rgba(53,162,235,0.8)'
+
+/>
+
 
 
 </div>
@@ -83,6 +94,7 @@ placeholder = "Search for data,users,docs"
   <div>
    {data.categories.map((i)=>(
      <CategoryItem 
+     key={i.heading}
      heading={i.heading}
       value={i.value}
        color= {`hsl(${i.value*4},${i.value}%,50%)`} 
