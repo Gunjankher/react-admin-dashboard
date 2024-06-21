@@ -5,6 +5,7 @@ import AdminSideBar from '../components/AdminSideBar'
 import Input from "../components/Input"
 import Widget from '../components/Widget'
 import CategoryItem from '../components/CategoryItem'
+import data from '../assets/data.json'
 
 import userImg from "../assets/profile.jpg"
 import {FaRegBell} from "react-icons/fa"
@@ -80,7 +81,13 @@ placeholder = "Search for data,users,docs"
 <div className="dashboard-categories">
   <h2>Inventory</h2>
   <div>
-    <CategoryItem heading="laptops" value={70} color= "hsl(69,100%,50%)" />
+   {data.categories.map((i)=>(
+     <CategoryItem 
+     heading={i.heading}
+      value={i.value}
+       color= {`hsl(${i.value},${i.value}%,50%)`} 
+       />
+   ))}
   </div>
 </div>
 

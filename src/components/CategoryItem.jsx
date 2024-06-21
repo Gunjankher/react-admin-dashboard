@@ -17,7 +17,7 @@ function CategoryItem({color,value,heading}) {
     </div>
 </div>
 
-<span>{value}</span>
+<span>{value}%</span>
     </div>
   )
 }
