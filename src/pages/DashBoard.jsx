@@ -85,7 +85,7 @@ placeholder = "Search for data,users,docs"
      <CategoryItem 
      heading={i.heading}
       value={i.value}
-       color= {`hsl(${i.value},${i.value}%,50%)`} 
+       color= {`hsl(${i.value*4},${i.value}%,50%)`} 
        />
    ))}
   </div>
