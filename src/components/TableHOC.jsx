@@ -1,10 +1,12 @@
 import React from 'react'
-import {useTable} from 'react-table'
+import {useTable,} from 'react-table'
 
-function TableHOC() {
-  return (
-    <div>TableHOC</div>
-  )
+function TableHOC(columns, data, containerClassname, heading, showPagination = false) {
+  return function HOC(){
+
+    return 
+
+  }
 }
 
 export default TableHOC
