@@ -7,6 +7,7 @@ import Widget from '../components/Widget'
 import CategoryItem from '../components/CategoryItem'
 import data from '../assets/data.json'
 import { BarChart,DoughnutChart } from '../components/Chart'
+import DashBoardTable from '../components/DashBoardTable'
 
 import userImg from "../assets/profile.jpg"
 import { FaRegBell } from "react-icons/fa"
@@ -132,6 +133,7 @@ function DashBoard() {
           </div>
 
           {/* Table */}
+          <DashBoardTable data={data.transaction}  />
 
 
 

@@ -24,7 +24,7 @@ const columns = [
   },
 ];
 
-const DashboardTable = ({ data = [] }) => {
+const DashBoardTable = ({ data = [] }) => {
   return TableHOC(
     columns,
     data,
@@ -33,4 +33,4 @@ const DashboardTable = ({ data = [] }) => {
   )();
 };
 
-export default DashboardTable;
+export default DashBoardTable;
