@@ -94,7 +94,7 @@ const Products = () => {
   );
 
   return (
-    <div className="admin-container">
+    <div className="adminContainer">
       <AdminSideBar />
       <main>{Table()}</main>
       <Link to="/admin/product/new" className="create-product-btn">
