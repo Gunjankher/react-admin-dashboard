@@ -77,7 +77,7 @@ onChange={changeImageHandler}
 
 {photo && <img  src={photo} alt='new Image'/>}
 
-<button>Create</button>
+<button type='submit'>Create</button>
 
 </form>
 </article>

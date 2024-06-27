@@ -11,6 +11,7 @@ const Customers = lazy(()=> import('./pages/Customers'))
 const NewProduct = lazy(()=> import('./pages/management/NewProduct'))
 const ProductMangement = lazy(()=> import('./pages/management/ProductMangement'))
 const TransactionManagement = lazy(()=> import('./pages/management/TransactionManagement'))
+const BarCharts = lazy(()=> import('./pages/Charts/BarCharts'))
 
 import Loader from './components/Loader'
 
@@ -74,6 +75,11 @@ const router = createBrowserRouter(
       <Route path='/admin/transaction/:id' element={
         <Suspense fallback={<Loader />}>
           <TransactionManagement />
+        </Suspense>
+      } />
+      <Route path='/admin/chart/bar' element={
+        <Suspense fallback={<Loader />}>
+          <BarCharts />
         </Suspense>
       } />
     </>
