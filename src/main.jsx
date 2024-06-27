@@ -8,6 +8,10 @@ const DashBoard = lazy(()=> import('./pages/DashBoard'))
 const Transcation = lazy(()=> import('./pages/Transcation'))
 const Products = lazy(()=> import('./pages/Products'))
 const Customers = lazy(()=> import('./pages/Customers'))
+const NewProduct = lazy(()=> import('./pages/management/NewProduct'))
+const ProductMangement = lazy(()=> import('./pages/management/ProductMangement'))
+const TransactionManagement = lazy(()=> import('./pages/management/TransactionManagement'))
+
 import Loader from './components/Loader'
 
 
@@ -51,6 +55,25 @@ const router = createBrowserRouter(
       <Route path='/admin/customer' element={
         <Suspense fallback={<Loader />}>
           <Customers />
+        </Suspense>
+      } />
+
+                    {/* MANAGEMENT */}
+
+
+      <Route path='/admin/product/new' element={
+        <Suspense fallback={<Loader />}>
+          <NewProduct />
+        </Suspense>
+      } />
+      <Route path='/admin/product/:id' element={
+        <Suspense fallback={<Loader />}>
+          <ProductMangement />
+        </Suspense>
+      } />
+      <Route path='/admin/transaction/:id' element={
+        <Suspense fallback={<Loader />}>
+          <TransactionManagement />
         </Suspense>
       } />
     </>
