@@ -13,7 +13,7 @@ const ProductMangement = lazy(()=> import('./pages/management/ProductMangement')
 const TransactionManagement = lazy(()=> import('./pages/management/TransactionManagement'))
 const BarCharts = lazy(()=> import('./pages/Charts/BarCharts'))
 const LineCharts = lazy(()=> import('./pages/Charts/LineChart'))
-const PieCharts = lazy(()=> import('./pages/Charts/PieChart'))
+const PieCharts = lazy(()=> import('./pages/Charts/PieCharts'))
 
 
 import Loader from './components/Loader'
@@ -99,6 +99,13 @@ const router = createBrowserRouter(
           <PieCharts/>
         </Suspense>
       } />
+
+      {/* Apps */}
+
+
+      
+
+
     </>
   )
 );

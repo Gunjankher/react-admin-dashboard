@@ -7,9 +7,12 @@ import {
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  LineElement,
+  PointElement,
+  Filler
 } from 'chart.js';
-import { Bar,Doughnut } from 'react-chartjs-2';
+import { Bar,Doughnut,Pie,Line } from 'react-chartjs-2';
 
 ChartJS.register(
   CategoryScale,
@@ -18,7 +21,10 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  LineElement,
+  PointElement,
+  Filler
 );
 
 
@@ -100,7 +106,7 @@ lables = "months"
       
 
 
-  return <Bar options={options} data={data} />;
+  return <Bar width={horizontal ?" 200%" : ""} options={options} data={data} />;
 }
 
 
@@ -148,3 +154,71 @@ export const DoughnutChart = ({
   return <Doughnut data={doughnutData} options={doughnutOptions} />;
 };
 
+export const PieChart = ({ labels, data, backgroundColor, offset }) => {
+  const pieChartData = {
+    labels,
+    datasets: [
+      {
+        data,
+        backgroundColor,
+        borderWidth: 1,
+        offset,
+      },
+    ],
+  };
+
+  const pieChartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
+  return <Pie data={pieChartData} options={pieChartOptions} />;
+};
+
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+export const LineChart = ({ data, label, backgroundColor, borderColor, labels = months }) => {
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      title: {
+        display: false,
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: {
+          display: false,
+        },
+      },
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+    },
+  };
+
+  const lineChartData = {
+    labels,
+    datasets: [
+      {
+        fill: true,
+        label,
+        data,
+        backgroundColor,
+        borderColor,
+      },
+    ],
+  };
+
+  return <Line options={options} data={lineChartData} />;
+};
