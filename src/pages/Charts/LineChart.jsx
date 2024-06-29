@@ -1,8 +1,16 @@
 import React from 'react'
+import AdminSideBar from '../../components/AdminSideBar'
 
 function LineChart() {
   return (
-    <div>LineChart</div>
+    <div className='adminContainer'>
+      <AdminSideBar />
+<main>
+  LineChart
+</main>
+
+
+      </div>
   )
 }
 
