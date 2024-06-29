@@ -53,12 +53,12 @@ function AdminSideBar() {
         {
             icon: <FaStopwatch />,
             name: "Stopwatch",
-            path: "/admin/app/stopwatch",
+            path: "/admin/apps/stopwatch",
         },
         {
             icon: <RiCoupon3Fill />,
             name: "Coupon",
-            path: "/admin/app/coupon",
+            path: "/admin/apps/coupon",
         },
         {
             icon: <FaGamepad />,

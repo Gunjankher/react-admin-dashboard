@@ -8,7 +8,7 @@ function Coupon() {
     <AdminSideBar />
 
     <main>
-        Toss
+       Coupon
     </main>
 
 </div>

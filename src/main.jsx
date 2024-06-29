@@ -14,6 +14,9 @@ const TransactionManagement = lazy(()=> import('./pages/management/TransactionMa
 const BarCharts = lazy(()=> import('./pages/Charts/BarCharts'))
 const LineCharts = lazy(()=> import('./pages/Charts/LineChart'))
 const PieCharts = lazy(()=> import('./pages/Charts/PieCharts'))
+const Coupon = lazy(()=> import('./pages/apps/Coupon'))
+const StopWatch = lazy(()=> import('./pages/apps/StopWatch'))
+const Toss = lazy(()=> import('./pages/apps/Toss'))
 
 
 import Loader from './components/Loader'
@@ -102,7 +105,21 @@ const router = createBrowserRouter(
 
       {/* Apps */}
 
-
+      <Route path='/admin/apps/stopwatch' element={
+        <Suspense fallback={<Loader />}>
+          <StopWatch />
+        </Suspense>
+      } />
+      <Route path='/admin/apps/coupon' element={
+        <Suspense fallback={<Loader />}>
+          <Coupon />
+        </Suspense>
+      } />
+      <Route path='/admin/apps/toss' element={
+        <Suspense fallback={<Loader />}>
+          <Toss/>
+        </Suspense>
+      } />
       
 
 
