@@ -37,11 +37,11 @@ let looplength = size - result.length
 
 for(let i=0; i<looplength; i++){
   let entireString = ""
-  if(includeNumbers) entireString +=allNumbers
+  if (includeCharacters) entireString += allLetters;
   if (includeNumbers) entireString += allNumbers;
   if (includeSymbols) entireString += allSymbols;
 
-let randomNum = Math.floor(Math.random()*entireString.length)
+let randomNum = Math.floor(Math.random()* entireString.length)
 result +=entireString[randomNum]
 }
 
