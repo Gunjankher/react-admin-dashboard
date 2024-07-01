@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { lazy } from 'react'
 import "./styles/app.scss"
-import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from 'react-router-dom'
+import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider,Link } from 'react-router-dom'
 
 const DashBoard = lazy(()=> import('./pages/DashBoard'))
 const Transcation = lazy(()=> import('./pages/Transcation'))
@@ -44,6 +44,18 @@ import Loader from './components/Loader'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
+
+    <Route 
+    path='/'
+    element ={
+      <Suspense fallback={<Loader />}>
+      <Link to="/admin/dashboard">
+      <button className='visit-button'>Visit Dashboard</button>
+    </Link>
+    </Suspense>
+    }
+    
+    />
       <Route path='/admin/dashboard' element={
         <Suspense fallback={<Loader />}>
           <DashBoard />

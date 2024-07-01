@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { RiDashboardFill,RiShoppingBag3Fill,RiCoupon3Fill} from 'react-icons/ri';
 import {AiFillFileText} from 'react-icons/ai'
 import {IoIosPeople} from 'react-icons/io'
 import {FaChartBar,FaChartLine,FaChartPie,FaStopwatch,FaGamepad} from 'react-icons/fa'
+import { HiMenuAlt4 } from 'react-icons/hi';
 
 
 function AdminSideBar() {
     const location = useLocation();
 
-    const dashItems = [
-        {
+const [showModel,setShowModel] = useState(false)
+const [phoneActive ,setPhoneActive] = useState(window.innerWidth<1100)
+
+
+
+
+const dashItems = [
+    {
             icon: <RiDashboardFill />,
             name: "Dashboard",
             path: "/admin/dashboard",
@@ -47,8 +54,9 @@ function AdminSideBar() {
             name: "Line",
             path: "/admin/chart/line",
         },
-       
+        
     ];
+    
     const appItems = [
         {
             icon: <FaStopwatch />,
@@ -68,10 +76,44 @@ function AdminSideBar() {
        
     ];
 
+    const resizeHandler = () => {
+        setPhoneActive(window.innerWidth < 1100);
+      };
+    
 
+    useEffect(() => {
+        window.addEventListener('resize', resizeHandler);
+    
+        return () => {
+          window.removeEventListener('resize', resizeHandler);
+        };
+      }, []);
 
     return (
-        <aside>
+
+        <>
+{
+    phoneActive && (
+        <button id='hamburger' onClick={()=> setShowModel(true)}>
+<HiMenuAlt4 />
+        </button>
+    )
+}
+
+        <aside
+         style={
+            phoneActive
+              ? {
+                  width: '20rem',
+                  height: '100vh',
+                  position: 'fixed',
+                  top: 0,
+                  left: showModel ? '0' : '-20rem',
+                  transition: 'all 0.5s',
+                }
+              : {}
+            }
+        >
             <h2>Logo</h2>
             <div>
 
@@ -80,7 +122,7 @@ function AdminSideBar() {
                 <ul>
                     {dashItems.map((item, index) => (
                         <li
-                            key={index}
+                        key={index}
                         style={{
                             backgroundColor : location.pathname.includes(item.path)
                             ? "rgba(0,115,255,0.1)"
@@ -100,7 +142,7 @@ function AdminSideBar() {
                 <ul>
                     {chartItems.map((item, index) => (
                         <li
-                            key={index}
+                        key={index}
                         style={{
                             backgroundColor : location.pathname.includes(item.path)
                             ? "rgba(0,115,255,0.1)"
@@ -121,7 +163,7 @@ function AdminSideBar() {
                 <ul>
                     {appItems.map((item, index) => (
                         <li
-                            key={index}
+                        key={index}
                         style={{
                             backgroundColor : location.pathname.includes(item.path)
                             ? "rgba(0,115,255,0.1)"
@@ -138,9 +180,16 @@ function AdminSideBar() {
 
 
             </div>
+
+            {phoneActive && (
+          <button id="close-sidebar" onClick={() => setShowModel(false)}>
+            Close
+          </button>
+        )}
         </aside>
 
         
+                    </>
     );
 }
 
